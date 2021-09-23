@@ -1,5 +1,6 @@
-﻿using UnityEngine;
-using System.Collections;
+﻿using System.Collections;
+using UnityEngine;
+using UnityEngine.SceneManagement;
 
 [RequireComponent(typeof(AudioSource))]
 public class IntroCameraController : MonoBehaviour
@@ -32,7 +33,7 @@ public class IntroCameraController : MonoBehaviour
 
         yield return new WaitForSeconds(audio.clip.length + 1);
 
-        Application.LoadLevel(nextLevel);
+        yield return SceneManager.LoadSceneAsync(nextLevel);
     }
 
     void Update()
