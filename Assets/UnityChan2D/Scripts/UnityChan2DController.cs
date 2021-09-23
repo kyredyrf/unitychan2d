@@ -32,11 +32,11 @@ public class UnityChan2DController : MonoBehaviour
 
         // Rigidbody2D
         m_rigidbody2D.gravityScale = 3.5f;
-        m_rigidbody2D.fixedAngle = true;
+        m_rigidbody2D.constraints = RigidbodyConstraints2D.FreezeRotation;
 
         // BoxCollider2D
         m_boxcollier2D.size = new Vector2(1, 2.5f);
-        m_boxcollier2D.center = new Vector2(0, -0.25f);
+        m_boxcollier2D.offset = new Vector2(0, -0.25f);
 
         // Animator
         m_animator.applyRootMotion = false;
