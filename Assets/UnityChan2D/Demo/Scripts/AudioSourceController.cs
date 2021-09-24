@@ -22,6 +22,22 @@ public class AudioSourceController : MonoBehaviour
         }
     }
 
+    AudioSource audioSource;
+
+    new AudioSource audio
+    {
+        get
+        {
+            if (audioSource == null)
+            {
+                audioSource = GetComponent<AudioSource>();
+            }
+
+            return audioSource;
+        }
+    }
+
+
     public void PlayOneShot(AudioClip clip)
     {
         audio.PlayOneShot(clip);
